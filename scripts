@@ -1,0 +1,33 @@
+create database teckweek;
+
+create table alunos (
+	id_aluno int primary key auto_increment,
+	nome_aluno varchar(255) not null,
+	email varchar(255) not null,
+	faculdade varchar(100) not null,
+	sala varchar(10),
+	outras varchar(55)
+);
+
+create table palestras(
+	id_palestra int primary key auto_increment,
+	nome_palestra varchar(255) not null,
+	local_palestra varchar(100) not null,
+	data_palestra date not null,
+	horario varchar(50) not null,
+	limite_vagas int not null,
+	descricao text
+);
+
+create table presencas(
+	id_presencas int primary key auto_increment,
+	id_palestra int not null,
+	id_alunos int not null,
+	presenca boolean
+);
+
+create table users (
+    id_users int primary key,
+    username varchar(255),
+    password varchar(255)
+);
